@@ -1,0 +1,208 @@
+/* common */
+body {
+   color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: "Nanum Gothic", sans-serif;
+    font-style: normal;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+.inner {
+  position: relative;
+  width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* header */
+header {
+    /* background-color: blue; */
+    background-color: #f6f5f0;
+    border-bottom: 1px solid #c8c8c8;
+}
+header > .inner {
+    
+    height: 120px;
+    /* background-color: orange; */
+    position: relative;
+    
+}
+header .logo {
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    /* 강의 : 05.헤더와 드롭다운 메뉴 - 로고 */
+    /* display: none; */
+}
+header .sub-menu {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+header .sub-menu ul.menu { 
+   display: flex;
+   font-family: Arial, sans-serif
+}
+header .sub-menu ul.menu li {
+    position: relative;
+}
+header .sub-menu ul.menu li::before {
+    content: "";
+    display: block; 
+    /* 바로 밑에 가로 세로 값줄려고 블럭으로 만듬 */
+    /* 근데 나중에  position: absolute; 추가돼서 지워줘도 됨. */
+    width: 1px;
+    height: 12px;
+    background-color: #e5e5e5;
+
+    position: absolute;
+    /*성질이 블럭요소로 변함 */
+    top:0;
+    bottom: 0;
+    left: 0;
+    margin: auto;    
+    /* position부터 margin까지 세트 */
+
+}
+header .sub-menu ul.menu li:first-child::before{
+    display: none;
+}
+
+
+header .sub-menu ul.menu li a {
+ font-size: 12px;
+ padding: 11px 16px;
+ display: block;
+ color: #656565;
+}
+header .sub-menu ul.menu li a:hover {
+    color: black;
+}
+
+header .sub-menu .search {
+    
+    height: 34px;
+    position: relative;
+    /* background-color: red; */
+}
+header .sub-menu .search input {
+    width: 36px;
+    height: 34px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #777;
+    transition: width .5s;
+    font-size: 12px;
+    position: relative;
+}
+header .sub-menu .search input:focus {
+    width: 190px;
+    border-color: #669900;
+
+}
+header .sub-menu .search .material-icons {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto;
+    height: 24px;
+    transition: .4s;
+}
+header .sub-menu .search.focused .material-icons {
+    opacity: 0;
+
+}
+header .inner ul.main-menu {
+  display: flex;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .inner ul.main-menu li.item {
+
+}
+header .inner ul.main-menu li.item .item__name {
+  padding: 10px 20px 34px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+header .inner ul.main-menu li.item:hover .item__name {
+  background-color: black;
+  color: #669900;
+  border-radius: 6px 6px 0 0;
+}
+header .inner > ul.main-menu li.item .item__contents {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: none;
+    
+}
+header .inner > ul.main-menu li.item:hover .item__contents {
+  display: block;
+ 
+}
+header .inner > ul.main-menu li.item .item__contents .contents__menu {
+    background-color:#2c2a29;
+    display: flex;
+}    
+
+header .inner > ul.main-menu li.item .item__contents .contents__menu > ul.inner {
+    display: flex;
+    padding: 20px 0;
+}
+header .inner > ul.main-menu li.item .item__contents .contents__menu > ul.inner > li {
+    width: 220px;
+}   
+header .inner > ul.main-menu li.item .item__contents .contents__menu > ul.inner > li h4 {
+    padding: 3px 0 12px 0 ;
+    font-size: 14px;
+    color: #fff;
+    
+}
+header .inner > ul.main-menu li.item .item__contents .contents__menu > ul.inner > li ul {
+   /* 안씀 바로 li 태그로 스타일 입혀줌*/
+}
+header .inner > ul.main-menu li.item .item__contents .contents__menu > ul.inner > li ul li {
+    padding: 5px 0;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+    
+}
+header > .inner > ul.main-menu li.item:hover .item__contents .contents__texture {
+    padding:26px 0;
+    font-size: 12px;
+    background-image: url("./images/main_menu_pattern.jpg");
+}
+header > .inner > ul.main-menu li.item:hover .item__contents .contents__texture > .inner {
+ /* 안씀 바로 h4, p 태그로 스타일 입혀줌*/ 
+}
+header > .inner > ul.main-menu li.item:hover .item__contents .contents__texture > .inner h4 {
+    color: #999;
+    font-weight: 700;
+    
+   
+}
+header > .inner > ul.main-menu li.item:hover .item__contents .contents__texture > .inner p {
+    color: #669900;
+    margin: 4px 0 14px;
+   
+}
